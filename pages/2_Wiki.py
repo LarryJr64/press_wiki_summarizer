@@ -13,17 +13,6 @@ from nltk.corpus import stopwords
 from urllib.parse import urlparse
 from urllib.request import urlopen
 import re
-from streamlit_lottie import st_lottie
-import requests
-
-def load_lottieurl(url):
-    r = requests.get(url)
-    if r.status_code !=200:
-        return None
-    return r.json()
-lottie_book = load_lottieurl("https://assets7.lottiefiles.com/packages/lf20_wu0yt0ej.json")
-
-
 
 
 def summarize_article(pop):
@@ -91,8 +80,6 @@ def main():
         result = summarize_article(pop)
         st.write("Summary :")
         st.write(result)
-        st.write('##')
-        st_lottie(lottie_book, height=250)
 
 
 
