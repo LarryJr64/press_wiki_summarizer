@@ -11,15 +11,6 @@ nltk.download('stopwords')
 from nltk.corpus import stopwords
 from urllib.parse import urlparse
 nltk.download('punkt')
-from streamlit_lottie import st_lottie
-import requests
-
-def load_lottieurl(url):
-    r = requests.get(url)
-    if r.status_code !=200:
-        return None
-    return r.json()
-lottie_press = load_lottieurl("from streamlit_lottie import st_lottie")
 
 
 
@@ -78,7 +69,6 @@ def main():
         st.write("Summary :")
         st.write(result)
         st.write("##")
-        st_lottie(lottie_press, height=250)
 expander = st.sidebar.expander("Which newspapers websites are available ?")
 expander.write(
     """
